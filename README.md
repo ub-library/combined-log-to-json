@@ -3,8 +3,8 @@
 A simple script to convert web server logs from the combined log format
 (NCSA Common log format extended with referer and user-agent) into JSON.
 
-Primarily useful to enable filtering and inspecting logs using `jq` or a
-similar tool, instead of operating on the plain text data with e.g.
+Primarily useful to enable filtering and inspection of logs using `jq`
+or a similar tool, instead of operating on the plain text data with e.g.
 `grep` or `awk`.
 
 ## Usage
