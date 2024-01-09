@@ -49,7 +49,6 @@ func main() {
 }
 
 func parseLogEntry(line string) (*LogEntry, error) {
-	// Regular expression to match the log entry pattern.
 	re := regexp.MustCompile(`(\S+) (\S+) (\S+) \[([^\]]+)\] "(\S+) (\S+) (\S+)" (\d+) (\d+) "([^"]+)" "([^"]+)"`)
 	matches := re.FindStringSubmatch(line)
 
@@ -83,11 +82,9 @@ func parseLogEntry(line string) (*LogEntry, error) {
 }
 
 func formatTimestamp(timestamp string) (string, error) {
-	// Parse the timestamp from the log format.
 	t, err := time.Parse("02/Jan/2006:15:04:05 -0700", timestamp)
 	if err != nil {
 		return "", err
 	}
-	// Format the timestamp for JSON.
 	return t.Format(time.RFC3339), nil
 }
