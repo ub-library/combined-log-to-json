@@ -1,3 +1,3 @@
-module combined-log-to-json
+module github.com/hb-library/combined-log-to-json
 
-go 1.21
+go 1.19

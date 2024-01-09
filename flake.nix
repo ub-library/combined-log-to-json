@@ -20,7 +20,7 @@
         devShells.default = pkgs.mkShell {
           packages = [
             pkgs.bashInteractive
-            pkgs.go_1_21
+            pkgs.go
           ];
         };
       });
