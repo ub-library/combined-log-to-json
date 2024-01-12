@@ -7,16 +7,13 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        combined-log-to-json = pkgs.callPackage ./package.nix {};
       in
       {
-        defaultPackage = pkgs.buildGoModule rec {
-          name = "combined-log-to-json";
-          src = builtins.path {
-            path = ./.;
-            name = "${name}-src";
-          };
-          vendorHash = null;
-        };
+        inherit combined-log-to-json;
+
+        defaultPackage = combined-log-to-json;
+
         devShells.default = pkgs.mkShell {
           packages = [
             pkgs.bashInteractive
